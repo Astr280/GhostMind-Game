@@ -33,15 +33,4 @@ All algorithms live in `algorithms/search.py`, are independent from Pygame, expo
 - Defensive local high-score/settings persistence in `ghostmind_data.json`. Missing/corrupt data falls back safely.
 - Quiet procedural arcade cues cover collectibles, power cores, hunter purges, life loss, sector clear, and game-over. They are generated locally, use low gain, and respect the saved mute setting—no external audio asset is required.
 
-## Release checklist
 
-- [x] Local virtual environment and dependencies
-- [x] Headless rendering smoke test
-- [x] Search, connectivity, movement, and scoring tests
-- [ ] Manual desktop playthrough: clear every sector, consume a core, catch a ghost, lose a life, pause/resume
-- [ ] Optional: add original local sound files and connect them to the existing mute preference
-- [ ] Optional: package with PyInstaller after a desktop QA pass
-
-## Limitations / extension ideas
-
-The game uses procedural art and silent graceful fallbacks rather than shipped audio assets. AI Lab executes searches immediately instead of animating each individual frontier expansion. A full desktop playthrough and PyInstaller build should be performed before public release.
