@@ -1,5 +1,9 @@
 # GhostMind: Neon Nocturne
 
+<p align="center">
+  <img src="assets/ghostmind_logo.png" alt="GhostMind AI-Powered Maze Chase logo" width="720">
+</p>
+
 A polished local Pygame arcade game where four visible AI personalities navigate a living neon labyrinth. No API key, external service, or downloadable asset is required for normal play.
 
 ## Run from GitHub
