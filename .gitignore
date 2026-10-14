@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.py[cod]
+ghostmind_data.json
+output/
+tmp/
