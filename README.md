@@ -2,16 +2,57 @@
 
 A polished local Pygame arcade game where four visible AI personalities navigate a living neon labyrinth. No API key, external service, or downloadable asset is required for normal play.
 
-## Run
+## Run from GitHub
+
+These steps work from a fresh Windows PowerShell window after cloning the repository.
+
+### 1. Install Python
+
+Install Python 3.12 or newer from [python.org](https://www.python.org/downloads/). During setup, enable **Add Python to PATH**.
+
+### 2. Clone the project
+
+```powershell
+git clone https://github.com/Astr280/GhostMind-Game.git
+cd GhostMind-Game
+```
+
+### 3. Create an isolated environment
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+```
+
+If PowerShell blocks activation, run this once in the same terminal and then repeat the activation command:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+### 4. Install the dependency
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+### 5. Launch GhostMind
+
+```powershell
 python main.py
 ```
 
-Run automated checks with `python -m unittest discover -s tests`.
+You can also launch without activating the environment:
+
+```powershell
+.\.venv\Scripts\python.exe main.py
+```
+
+### 6. Run automated tests
+
+```powershell
+python -m unittest discover -s tests
+```
 
 ## Controls
 
