@@ -89,7 +89,12 @@ class Game:
     def _hud(self,surf,fonts,w,bottom):
         def centered(value,y,font,color):
             image=fonts[font].render(value,True,color);surf.blit(image,(w//2-image.get_width()//2,y))
-        left=fonts['label'].render(f'1UP  {self.score:06}',True,WHITE);right=fonts['label'].render(f'HIGH SCORE  {self.high:06}',True,WHITE);surf.blit(left,(max(28,w//2-420),30));surf.blit(right,(min(w-280,w//2+80),30));centered(f'SECTOR {self.level}   ◈ {self.lives}',61,'small',GOLD)
+        left_x=max(28,w//2-420);left=fonts['label'].render(f'1UP  {self.score:06}',True,WHITE);right=fonts['label'].render(f'HIGH SCORE  {self.high:06}',True,WHITE);surf.blit(left,(left_x,30));surf.blit(right,(min(w-280,w//2+80),30));centered(f'SECTOR {self.level}   ◈ {self.lives}',61,'small',GOLD)
+        # The 1UP status sits directly below the score heading and changes
+        # color only after the bonus token has been consumed.
+        one_up='1UP ACTIVE' if self.maze.life_token else '1UP NOT ACTIVE'
+        one_up_color=(90,255,140) if self.maze.life_token else MUTED
+        surf.blit(fonts['tiny'].render(one_up,True,one_up_color),(left_x,63))
         if self.respawn_timer>0:centered('SIGNAL LOST // REBOOTING',bottom+18,'small',RED)
         elif self.opening_timer>0:centered(f'GET READY  {self.opening_timer:0.1f}',bottom+18,'small',YELLOW)
         elif self.power>0:centered(f'POWER SURGE  {self.power:0.1f}s',bottom+18,'small',YELLOW)
